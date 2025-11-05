@@ -1,0 +1,530 @@
+/* Reset e Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('hero-image.jpg') center/cover;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.headline {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.subheadline {
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    font-weight: 300;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Botões CTA */
+.cta-button {
+    display: inline-block;
+    background: #ff6b6b;
+    color: white;
+    padding: 20px 50px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background: #ff5252;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(255, 107, 107, 0.6);
+}
+
+.cta-button.large {
+    font-size: 1.5rem;
+    padding: 25px 60px;
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+    }
+    50% {
+        box-shadow: 0 10px 50px rgba(255, 107, 107, 0.7);
+    }
+    100% {
+        box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+    }
+}
+
+/* Seção Problema */
+.problem {
+    background: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.problem h2 {
+    font-size: 2.5rem;
+    color: #667eea;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.problem p {
+    font-size: 1.2rem;
+    max-width: 900px;
+    margin: 0 auto 20px;
+    line-height: 1.8;
+}
+
+.problem strong {
+    color: #ff6b6b;
+    font-weight: 600;
+}
+
+/* Seção Solução */
+.solution {
+    background: #f5f5f5;
+    padding: 80px 0;
+}
+
+.solution-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.solution-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+
+.solution-text h2 {
+    font-size: 2.5rem;
+    color: #667eea;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.solution-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.solution-text strong {
+    color: #764ba2;
+    font-weight: 600;
+}
+
+/* Seção Benefícios */
+.benefits {
+    background: white;
+    padding: 80px 0;
+}
+
+.benefits h2 {
+    font-size: 2.5rem;
+    color: #667eea;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.benefit-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.benefit-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.benefit-card h3 {
+    font-size: 1.5rem;
+    color: #667eea;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.benefit-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Seção Conteúdo */
+.content {
+    background: #f5f5f5;
+    padding: 80px 0;
+}
+
+.content h2 {
+    font-size: 2.5rem;
+    color: #667eea;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+
+.content-modules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.module {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 5px solid #667eea;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.module:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.module-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.module h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.module p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Seção Público-Alvo */
+.target-audience {
+    background: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.target-audience h2 {
+    font-size: 2.5rem;
+    color: #667eea;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.target-intro {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    color: #555;
+}
+
+.target-list {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.target-item {
+    font-size: 1.2rem;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+    font-weight: 500;
+}
+
+/* Seção Autora */
+.author {
+    background: #f5f5f5;
+    padding: 80px 0;
+}
+
+.author h2 {
+    font-size: 2.5rem;
+    color: #667eea;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.author-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.author-text h3 {
+    font-size: 2rem;
+    color: #764ba2;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.author-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Seção Oferta */
+.offer {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 80px 0;
+}
+
+.offer h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.offer-box {
+    background: white;
+    color: #333;
+    padding: 50px;
+    border-radius: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.price-section {
+    margin-bottom: 40px;
+}
+
+.price-label {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 1.2rem;
+}
+
+.price-options {
+    margin: 30px 0;
+}
+
+.price-option {
+    margin-bottom: 20px;
+}
+
+.installment {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.price-detail {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.guarantee {
+    margin-top: 40px;
+    padding: 30px;
+    background: #f5f7fa;
+    border-radius: 15px;
+}
+
+.guarantee h3 {
+    font-size: 1.5rem;
+    color: #667eea;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.guarantee p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Seção FAQ */
+.faq {
+    background: white;
+    padding: 80px 0;
+}
+
+.faq h2 {
+    font-size: 2.5rem;
+    color: #667eea;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: #f5f7fa;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border-left: 4px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    background: #e8ecf1;
+    transform: translateX(5px);
+}
+
+.faq-item h3 {
+    font-size: 1.3rem;
+    color: #667eea;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.faq-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .headline {
+        font-size: 2rem;
+    }
+    
+    .subheadline {
+        font-size: 1.1rem;
+    }
+    
+    .solution-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .content-modules {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-button {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+    
+    .cta-button.large {
+        padding: 20px 40px;
+        font-size: 1.2rem;
+    }
+    
+    .offer-box {
+        padding: 30px 20px;
+    }
+    
+    .price {
+        font-size: 2.5rem;
+    }
+}
+
