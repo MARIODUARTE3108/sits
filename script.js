@@ -1,12 +1,19 @@
-// Smooth scroll para links âncora
+// Smooth scroll para links âncora (com offset no topo)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+
+        const targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+
+        const target = document.querySelector(targetId);
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const offset = 80; // ajuste conforme altura do topo
+            const top = target.getBoundingClientRect().top + window.scrollY - offset;
+
+            window.scrollTo({
+                top,
+                behavior: 'smooth'
             });
         }
     });
@@ -58,7 +65,7 @@ function startCountdown(duration, display) {
 }
 
 // Ativar contador se houver elemento na página
-window.addEventListener('DOMContentLoaded', (event) => {
+window.addEventListener('DOMContentLoaded', () => {
     const countdownElement = document.querySelector('#countdown');
     if (countdownElement) {
         const twentyFourHours = 24 * 60 * 60;
@@ -66,12 +73,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 });
 
-// Efeito de parallax suave no hero
-window.addEventListener('scroll', function() {
-    const scrolled = window.pageYOffset;
+// Efeito de parallax suave no hero (agora o hero sobe levemente ao rolar)
+window.addEventListener('scroll', () => {
     const hero = document.querySelector('.hero');
-    if (hero) {
-        hero.style.transform = 'translateY(' + (scrolled * 0.5) + 'px)';
-    }
-});
+    if (!hero) return;
 
+    const scrolled = window.pageYOffset || document.documentElement.scrollTop;
+    hero.style.transform = 'translateY(' + (scrolled * -0.15) + 'px)';
+});
